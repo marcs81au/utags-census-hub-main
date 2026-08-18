@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_hex"
+            android:title="Hexadecimal"
+            android:icon="@drawable/left" />
+        <item
+            android:id="@+id/menu_ascii"
+            android:title="ASCII"
+            android:icon="@drawable/left" />
+        <item
+            android:id="@+id/menu_utf8"
+            android:title="UTF8"
+            android:icon="@drawable/left" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/menu_beeper"
+                android:title="Turn off beeper"
+                android:checkable="true"
+                android:icon="@drawable/left" />
+            <item
+                android:id="@+id/menu_fcc"
+                android:title="FCC (902~928MHz)"
+                android:icon="@drawable/left" />
+            <item
+                android:id="@+id/menu_free_show"
+                android:title="Free Show"
+                android:icon="@drawable/left" />
+        </menu>
+    </item>
+</menu>

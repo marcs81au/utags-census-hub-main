@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_marginBottom="20dp"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="2dp"
+        android:background="#808080" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/view_split_main">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                android:id="@+id/view_split_left">
+
+                <!-- 标签类型 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="right"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_Configration_TagType" />
+
+                    <Spinner
+                        android:id="@+id/sp_TagType1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:entries="@array/Array_TagType"
+                        android:fontFamily="@font/figtree_regular"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <Button
+                        android:id="@+id/btn_TagType"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/figtree_medium"
+                        android:background="@drawable/button_orange"
+                        android:backgroundTint="@color/newColor"
+                        android:textColor="@color/white"
+                        android:nextFocusDown="@+id/btn_Configration_Back"
+                        android:nextFocusLeft="@+id/btn_Configration_SendCarrier"
+                        android:nextFocusRight="@+id/btn_Configration_Back"
+                        android:nextFocusUp="@+id/btn_Configration_SendCarrier"
+                        android:onClick="Button_TagType_Set"
+                        android:text="@string/btn_Set" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/software_version"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="left"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="Soft Version:" />
+
+                    <TextView
+                        android:id="@+id/fireware_version"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="left"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="  Firmware:" />
+
+                    <TextView
+                        android:id="@+id/serial_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="left"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="  SerialNo:" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="2dp"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="left"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_device_name" />
+
+                    <Spinner
+                        android:id="@+id/btn_off_on"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:entries="@array/Array_on"
+                        android:fontFamily="@font/figtree_regular"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <Button
+                        android:id="@+id/btn_devicebeep"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/figtree_medium"
+                        android:background="@drawable/button_green"
+                        android:textColor="@color/white"
+                        android:nextFocusDown="@+id/btn_Configration_Back"
+                        android:nextFocusLeft="@+id/btn_Configration_SendCarrier"
+                        android:nextFocusRight="@+id/btn_Configration_Back"
+                        android:nextFocusUp="@+id/btn_Configration_SendCarrier"
+                        android:onClick="Button_DeviceBeep_Set"
+                        android:text="@string/btn_Set" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="2dp"
+                    android:background="#808080" />
+
+                <!-- 功率设置 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_Configration_Power" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+
+                    <CheckBox
+                        android:id="@+id/cb01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:checked="true"
+                        android:text="Antenna1" />
+
+                    <Spinner
+                        android:id="@+id/sp_Configration_Power"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/figtree_regular"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <CheckBox
+                        android:id="@+id/cb02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:checked="true"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="Antenna2" />
+
+                    <Spinner
+                        android:id="@+id/sp_Configration_Power2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/figtree_regular"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <Button
+                        android:id="@+id/btn_Configration_Open"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.15"
+                        android:nextFocusDown="@+id/btn_Configration_GetBaseBand"
+                        android:nextFocusLeft="@+id/btn_Configration_SetPower"
+                        android:nextFocusRight="@+id/btn_Configration_GetBaseBand"
+                        android:nextFocusUp="@+id/btn_Configration_SetPower"
+                        android:onClick="Button_OpenPower"
+                        android:fontFamily="@font/figtree_medium"
+                        android:visibility="gone"
+                        android:text="︾ " />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:id="@+id/linearlayout_id">
+                    <!--Ant2~Ant3-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="0.15"-->
+<!--                            android:fontFamily="@font/figtree_regular"-->
+<!--                            android:text="  " />-->
+
+                        <CheckBox
+                            android:id="@+id/cb03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:fontFamily="@font/figtree_regular"
+                            android:text="All" />
+                        <Spinner
+                            android:id="@+id/sp_Configration_Power3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:fontFamily="@font/figtree_regular"
+                            android:prompt="@string/Clear_Tags" />
+                        <Button
+                            android:id="@+id/btn_Configration_GetPower"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="2dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/button_orange"
+                            android:textColor="@color/white"
+                            android:nextFocusDown="@+id/btn_Configration_SetPower"
+                            android:nextFocusLeft="@+id/btn_Configration_Back"
+                            android:nextFocusRight="@+id/btn_Configration_SetPower"
+                            android:nextFocusUp="@+id/btn_Configration_Back"
+                            android:fontFamily="@font/figtree_medium"
+                            android:text="@string/btn_Get" />
+
+                        <Button
+                            android:id="@+id/btn_Configration_SetPower"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="2dp"
+                            android:layout_weight="0.25"
+                            android:nextFocusDown="@+id/btn_Configration_Open"
+                            android:nextFocusLeft="@+id/btn_Configration_GetPower"
+                            android:nextFocusRight="@+id/btn_Configration_Open"
+                            android:nextFocusUp="@+id/btn_Configration_GetPower"
+                            android:onClick="Button_setPower"
+                            android:background="@drawable/button_green"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/figtree_medium"
+                            android:text="@string/btn_Set" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#808080"
+                    android:visibility="visible"/>
+
+                <!-- 频率设置 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="right"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_Configration_Frequency" />
+
+                    <Spinner
+                        android:id="@+id/sp_Frequency"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/figtree_regular"
+                        android:entries="@array/Array_Frequency"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <Button
+                        android:id="@+id/btn_Configration_SetFrequency"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/figtree_medium"
+                        android:background="@drawable/button_orange"
+                        android:backgroundTint="@color/newColor"
+                        android:textColor="@color/white"
+                        android:nextFocusDown="@+id/btn_Configration_SendCarrier"
+                        android:nextFocusLeft="@+id/btn_Configration_SetPingPongStopTime"
+                        android:nextFocusRight="@+id/btn_Configration_SendCarrier"
+                        android:nextFocusUp="@+id/btn_Configration_SetPingPongStopTime"
+                        android:onClick="Button_SetFrequency"
+                        android:text="@string/btn_Set" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="2dp"
+                    android:background="#808080"
+                    android:visibility="gone"/>
+
+                <!-- 基带速率 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="right"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_Configration_BaseSpeed" />
+
+                    <Spinner
+                        android:id="@+id/sp_BaseSpeedType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/figtree_regular"
+                        android:entries="@array/Array_BaseSpeedType"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <Button
+                        android:id="@+id/btn_Configration_GetBaseBand"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/button_orange"
+                        android:fontFamily="@font/figtree_medium"
+                        android:nextFocusDown="@+id/btn_Configration_SetBaseBand"
+                        android:nextFocusLeft="@+id/btn_Configration_SetPower"
+                        android:nextFocusRight="@+id/btn_Configration_SetBaseBand"
+                        android:nextFocusUp="@+id/btn_Configration_SetPower"
+                        android:onClick="Button_GetBaseBand"
+                        android:textColor="@color/white"
+                        android:text="@string/btn_Get" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="right"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_Configration_QValue" />
+
+                    <Spinner
+                        android:id="@+id/sp_BaseSpeedQValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/figtree_regular"
+                        android:entries="@array/Array_QValue"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <Button
+                        android:id="@+id/btn_Configration_SetBaseBand"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/figtree_medium"
+                        android:background="@drawable/button_orange"
+                        android:backgroundTint="@color/newColor"
+                        android:textColor="@color/white"
+                        android:nextFocusDown="@+id/btn_Configration_SetPingPongReadTime"
+                        android:nextFocusLeft="@+id/btn_Configration_GetBaseBand"
+                        android:nextFocusRight="@+id/btn_Configration_SetPingPongReadTime"
+                        android:nextFocusUp="@+id/btn_Configration_GetBaseBand"
+                        android:onClick="Button_SetBaseBand"
+                        android:text="@string/btn_Set" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="2dp"
+                    android:background="#808080"
+                    android:visibility="gone"/>
+
+                <!-- 载波发射 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="right"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_Configration_Ant" />
+
+                    <Spinner
+                        android:id="@+id/sp_Carrier"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:entries="@array/Array_Carrier"
+                        android:fontFamily="@font/figtree_regular"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <Button
+                        android:id="@+id/btn_Configration_SendCarrier"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/button_orange"
+                        android:fontFamily="@font/figtree_medium"
+                        android:nextFocusDown="@+id/btn_Configration_RF"
+                        android:nextFocusLeft="@+id/btn_Configration_SetFrequency"
+                        android:nextFocusRight="@+id/btn_Configration_RF"
+                        android:nextFocusUp="@+id/btn_Configration_SetFrequency"
+                        android:onClick="Button_Test"
+                        android:textColor="@color/white"
+                        android:text="@string/btn_CARRIER" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="2dp"
+                    android:background="#808080"
+                    android:visibility="gone"/>
+
+                <!-- 天线使能 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_Configration_ReaderControl" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="@string/tv_Configration_ReadAnt" />
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                    <CheckBox
+                        android:id="@+id/cb11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:checked="true"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="ANT1" />
+
+                    <CheckBox
+                        android:id="@+id/cb12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:checked="true"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="ANT2" />
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+                <CheckBox
+                        android:id="@+id/cb19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="All" />
+
+                    <Button
+                        android:id="@+id/btn_Ant_GetPower"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.12"
+                        android:background="@drawable/button_orange"
+                        android:textColor="@color/white"
+                        android:nextFocusDown="@+id/btn_Configration_SetPower"
+                        android:nextFocusLeft="@+id/btn_Configration_Back"
+                        android:nextFocusRight="@+id/btn_Configration_SetPower"
+                        android:nextFocusUp="@+id/btn_Configration_Back"
+                        android:onClick="Button_GetPower"
+                        android:fontFamily="@font/figtree_medium"
+                        android:text="@string/btn_Get" />
+                    <Button
+                        android:id="@+id/btn_ReadAnt"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="0.12"
+                        android:background="@drawable/button_green"
+                        android:textColor="@color/white"
+                        android:nextFocusDown="@+id/btn_Configration_Back"
+                        android:nextFocusLeft="@+id/btn_Configration_SendCarrier"
+                        android:nextFocusRight="@+id/btn_Configration_Back"
+                        android:nextFocusUp="@+id/btn_Configration_SendCarrier"
+                        android:onClick="Button_ReadAnt_Set"
+                        android:fontFamily="@font/figtree_medium"
+                        android:text="@string/btn_Set" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="ANT3" />
+
+                    <CheckBox
+                        android:id="@+id/cb14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="ANT4" />
+
+                    <CheckBox
+                        android:id="@+id/cb15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="ANT5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="ANT6" />
+
+                    <CheckBox
+                        android:id="@+id/cb17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="ANT7" />
+
+                    <CheckBox
+                        android:id="@+id/cb18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="ANT8" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#808080"
+                    android:visibility="gone"/>
+
+                <!-- Configration_GPI -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+
+
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AutoSleep" />
+
+                    <Spinner
+                        android:id="@+id/sp_Power"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/figtree_regular"
+                        android:entries="@array/Array_on"
+                        android:prompt="@string/Clear_Tags" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="SleepTime" />
+
+                    <EditText
+                        android:id="@+id/sleep_time_editext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/figtree_regular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="x10ms" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:checked="true"
+                        android:text="RSSI" />
+
+                    <EditText
+                        android:id="@+id/sp_rssi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="0"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="FilterTime" />
+
+                    <EditText
+                        android:id="@+id/filter_time_editext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.20"
+                        android:text="0"
+                        android:focusable="true"
+                        android:fontFamily="@font/figtree_regular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/figtree_regular"
+                        android:text="x10ms" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:id="@+id/linearLayout_id">
+                    <!--Ant2~Ant3-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <!--                        <TextView-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_weight="0.15"-->
+                        <!--                            android:fontFamily="@font/figtree_regular"-->
+                        <!--                            android:text="  " />-->
+
+                        <CheckBox
+                            android:id="@+id/freqnum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:fontFamily="@font/figtree_regular"
+                            android:text="FreqNum" />
+
+                        <Button
+                            android:id="@+id/btn_GetPower"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="2dp"
+                            android:layout_weight="0.25"
+                            android:nextFocusDown="@+id/btn_Configration_SetPower"
+                            android:nextFocusLeft="@+id/btn_Configration_Back"
+                            android:nextFocusRight="@+id/btn_Configration_SetPower"
+                            android:nextFocusUp="@+id/btn_Configration_Back"
+                            android:onClick="Button_GetFiltertime"
+                            android:background="@drawable/button_orange"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/figtree_medium"
+                            android:text="@string/btn_Get" />
+
+                        <Button
+                            android:id="@+id/btn_SetPower"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="2dp"
+                            android:layout_weight="0.25"
+                            android:nextFocusDown="@+id/btn_Configration_Open"
+                            android:nextFocusLeft="@+id/btn_Configration_GetPower"
+                            android:nextFocusRight="@+id/btn_Configration_Open"
+                            android:nextFocusUp="@+id/btn_Configration_GetPower"
+                            android:background="@drawable/button_green"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/figtree_medium"
+                            android:text="@string/btn_Set" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Configration_ResetFactory -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/btn_Configration_RF"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.35"
+                        android:fontFamily="@font/figtree_medium"
+                        android:background="@drawable/button_orange"
+                        android:nextFocusDown="@+id/btn_TagType"
+                        android:nextFocusLeft="@+id/btn_ReadAnt"
+                        android:nextFocusRight="@+id/btn_TagType"
+                        android:nextFocusUp="@+id/btn_ReadAnt"
+                        android:onClick="Button_Configration_RF"
+                        android:textColor="@color/white"
+                        android:text="@string/btn_Restore"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

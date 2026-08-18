@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  UTAGS ear-tag logo — U shape with horizontal pin bar and lime accent dot.
+  White stroke on transparent background; pair with a dark green background.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Top pin / crossbar -->
+    <path
+        android:pathData="M 22,26 L 98,26"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="11"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+
+    <!-- U body: left arm, bottom curve, right arm -->
+    <path
+        android:pathData="M 33,26 L 33,72 A 27,27 0 0 0 87,72 L 87,26"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="11"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent" />
+
+    <!-- Lime accent dot (upper-right corner of crossbar) -->
+    <path
+        android:pathData="M 96,17 A 7,7 0 1 1 95.999,17 Z"
+        android:fillColor="#B1F946" />
+
+</vector>

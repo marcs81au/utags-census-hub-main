@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00BB47</color>
+    <color name="colorPrimaryDark">#2B532D</color>
+    <color name="colorAccent">#B1F946</color>
+    <color name="utags_bg">#1A3B1C</color>
+    <color name="newColor">#2B532D</color>
+    <color name="lightgreen">#2AA830</color>
+    <!-- White and Black -->
+    <color name="gray">#DBDBD3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+</resources>
